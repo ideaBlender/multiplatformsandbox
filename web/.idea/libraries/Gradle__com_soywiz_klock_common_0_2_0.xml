@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.soywiz:klock-common:0.2.0" type="kotlin.common">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.soywiz/klock-common/0.2.0/7a6b30958fed297cecea696484dba1cfd1af1253/klock-common-0.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.soywiz/klock-common/0.2.0/bd507782c4fc08983d52cc9aa81ba179b68bdb1c/klock-common-0.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

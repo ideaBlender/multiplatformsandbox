@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-gradle-plugin:pom:2.0.5.RELEASE">
+    <CLASSES>
+      <root url="file://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-gradle-plugin/2.0.5.RELEASE/spring-boot-gradle-plugin-2.0.5.RELEASE.pom" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

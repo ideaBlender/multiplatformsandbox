@@ -1,0 +1,47 @@
+apply plugin: 'org.jetbrains.kotlin.frontend'
+apply plugin: 'kotlin2js'
+apply plugin: 'kotlinx-serialization'
+
+kotlinFrontend {
+    downloadNodeJsVersion = '10.0.0'
+
+    npm {
+        dependency("webpack-cli", "v2.0.12")
+/*        dependency("firebase", "^4.6.2")*/
+        dependency("react", "16.6.0")
+        dependency("react-dom", "16.6.0")
+        dependency("react-router-dom", "4.2.2")
+        dependency("axios", "0.18.0")
+        dependency("react-modal", "^3.6.1")
+        dependency("react-quill", "^1.3.2")
+        dependency("html-react-parser", "^0.4.7")
+        dependency("uuid")
+        dependency("query-string", "^6.2.0")
+    }
+
+    sourceMaps = true
+
+    webpackBundle {
+        bundleName = "main"
+        sourceMapEnabled = true
+        contentPath = file('src/main/web')
+        proxyUrl = "http://localhost:8080"
+    }
+}
+
+dependencies {
+    compile project(':common-js')
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+    compile("org.jetbrains.kotlinx:kotlinx-html-js:0.6.11") { force = true }
+    compile "org.jetbrains:kotlin-react:16.5.2-pre.57-kotlin-1.2.71"
+    compile 'org.jetbrains:kotlin-react-router-dom:4.3.1-pre.59-kotlin-1.3.0'
+    compile "org.jetbrains:kotlin-react-dom:16.4.1-pre.34-kotlin-1.2.50"
+}
+
+compileKotlin2Js {
+    kotlinOptions.metaInfo = true
+    kotlinOptions.outputFile = "$project.buildDir.path/js/${project.name}.js"
+    kotlinOptions.sourceMap = true
+    kotlinOptions.moduleKind = 'commonjs'
+    kotlinOptions.main = "call"
+}

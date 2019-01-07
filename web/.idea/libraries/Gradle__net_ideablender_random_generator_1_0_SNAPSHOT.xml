@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: net.ideablender:random-generator:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/ideaBlender/random-generator/1.0-SNAPSHOT/random-generator-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

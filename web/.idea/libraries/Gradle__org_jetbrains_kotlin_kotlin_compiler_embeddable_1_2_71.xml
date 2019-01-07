@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.2.71">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.2.71/9bae55d7f84fbb228efc93711f41619ce67af81c/kotlin-compiler-embeddable-1.2.71.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.2.71/3cf7fcd4e9ad7e74e5191caa056936575bb11aab/kotlin-compiler-embeddable-1.2.71-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.2.71/61d1d84a4015d8c857ef9f656ddd54371fdaff22/kotlin-compiler-embeddable-1.2.71-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

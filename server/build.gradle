@@ -1,0 +1,58 @@
+apply plugin: 'idea'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
+apply plugin: 'kotlin-jpa'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'kotlinx-serialization'
+
+compileKotlin {
+	kotlinOptions {
+		freeCompilerArgs = ['-Xjsr305=strict']
+		jvmTarget = '1.8'
+	}
+}
+compileTestKotlin {
+	kotlinOptions {
+		freeCompilerArgs = ['-Xjsr305=strict']
+		jvmTarget = '1.8'
+	}
+}
+
+test {
+	systemProperty 'spring.profiles.active', 'DEV'
+	useJUnit {
+		includeCategories 'TestUseCaseSuite'
+	}
+	testLogging {
+		events "passed", "skipped", "failed", "standardError"
+	}
+	afterTest { desc, result ->
+		logger.quiet "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
+	}
+}
+
+dependencies {
+	compile project(':common-jvm')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-devtools')
+	compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: '2.9.8'
+	//compile('org.springframework.boot:spring-boot-starter-security')
+	//compile('org.springframework.security.oauth:spring-security-oauth2:2.3.3.RELEASE')
+	compile('org.jetbrains.kotlin:kotlin-stdlib-jdk8')
+	compile('org.jetbrains.kotlin:kotlin-reflect')
+	//compile 'org.springframework.security.oauth:spring-security-oauth2:2.1.1.RELEASE'
+	compile 'org.springframework.social:spring-social-facebook:2.0.3.RELEASE'
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
+	compile group: 'javax.mail', name: 'mail', version: '1.4.7'
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.0'
+	//compile group: 'org.springframework.security', name: 'spring-security-jwt', version: '1.0.7.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: springBootVersion, ext: 'pom'
+	compile group: 'org.jetbrains.kotlin', name: 'kotlin-gradle-plugin', version: kotlin_version
+	compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
+	runtime('com.h2database:h2:1.4.184')
+
+}
